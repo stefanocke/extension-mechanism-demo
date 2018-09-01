@@ -5,14 +5,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        'app': path.join(process.cwd(), './src/main.ts'),
-        'vendors': path.join(process.cwd(), './src/vendors.ts')
+        'app': path.join(process.cwd(), './src/main.ts')
+        //'vendors': path.join(process.cwd(), './src/vendors.ts')
     },
 
     output: {
         path: path.join(process.cwd(), 'dist'),
         filename: '[name].bundle.js'
     },
+
     resolve: {
         extensions: [
             '.ts',
@@ -33,6 +34,14 @@ module.exports = {
             chunksSortMode: 'manual',
             chunks: []
         }),
+    ],
+    externals: [
+        function (context, request, callback) {
+            if (/^@angular/.test(request)) {
+                return callback(null, 'commonjs ' + request);
+            }
+            callback();
+        }
     ],
     devServer: {
         before(app) {

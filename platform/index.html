@@ -9,7 +9,7 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script>
-        SystemJS.import('vendors.bundle.js').then(() => {
+        SystemJS.import('dist/vendors.bundle.js').then(() => {
             return SystemJS.import('app.bundle.js');
         }).catch(function (err) {
             console.error(err);
