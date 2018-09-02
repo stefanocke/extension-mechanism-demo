@@ -37,7 +37,7 @@ module.exports = {
     ],
     externals: [
         function (context, request, callback) {
-            if (/^@angular/.test(request)) {
+            if (/^@angular/.test(request) || /^primeng/.test(request)) {
                 return callback(null, 'commonjs ' + request);
             }
             callback();

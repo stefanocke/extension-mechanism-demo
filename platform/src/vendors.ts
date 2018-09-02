@@ -4,7 +4,7 @@ import * as angularPlatformBrowserDynamic from '@angular/platform-browser-dynami
 import * as angularForms from '@angular/forms';
 import * as angularCommon from '@angular/common';
 import * as angularMaterial from '@angular/material';
-//import * as primeNgButton from 'primeng/button';
+import * as primeNgButton from 'primeng/button';
 
 declare const SystemJS: any;
 
@@ -15,4 +15,4 @@ SystemJS.set('@angular/platform-browser-dynamic', SystemJS.newModule(angularPlat
 SystemJS.set('@angular/forms', SystemJS.newModule(angularForms));
 SystemJS.set('@angular/common', SystemJS.newModule(angularCommon));
 SystemJS.set('@angular/material', SystemJS.newModule(angularMaterial));
-//SystemJS.set('primeng/button', SystemJS.newModule(primeNgButton));
+SystemJS.set('primeng/button', SystemJS.newModule(primeNgButton));
